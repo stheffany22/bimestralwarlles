@@ -1,31 +1,37 @@
-print("Escolha a operação:")
-print("1 - Adição")
-print("2 - Subtração")
-print("3 - Multiplicação")
-print("4 - Divisão")
-print("5 - Resto da divisão")
+#include <stdio.h>
 
-op = int(input("Digite a opção: "))
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
+int main() {
+    int opc;
+    double a, b;
 
-if op == 1:
-    resultado = num1 + num2
-elif op == 2:
-    resultado = num1 - num2
-elif op == 3:
-    resultado = num1 * num2
-elif op == 4:
-    if num2 != 0:
-        resultado = num1 / num2
-    else:
-        resultado = "Erro: divisão por zero"
-elif op == 5:
-    if num2 != 0:
-        resultado = num1 % num2
-    else:
-        resultado = "Erro: divisão por zero"
-else:
-    resultado = "Opção inválida."
+    printf("Calculadora:\n");
+    printf("[1] Adicao\n[2] Subtracao\n[3] Multiplicacao\n[4] Divisao\n[5] Resto da divisao\n");
+    printf("Escolha: ");
+    scanf("%d", &opc);
 
-print("Resultado:", resultado)
+    printf("Digite dois numeros: ");
+    scanf("%lf %lf", &a, &b);
+
+    switch (opc) {
+        case 1:
+            printf("Resultado: %.2f\n", a + b);
+            break;
+        case 2:
+            printf("Resultado: %.2f\n", a - b);
+            break;
+        case 3:
+            printf("Resultado: %.2f\n", a * b);
+            break;
+        case 4:
+            if (b == 0) printf("Erro: divisao por zero!\n");
+            else printf("Resultado: %.2f\n", a / b);
+            break;
+        case 5:
+            if ((int)b == 0) printf("Erro: divisao por zero!\n");
+            else printf("Resto: %d\n", (int)a % (int)b);
+            break;
+        default:
+            printf("Opcao invalida.\n");
+    }
+    return 0;
+}
