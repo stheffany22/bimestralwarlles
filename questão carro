@@ -1,12 +1,26 @@
-vel = float(input("Qual a velocidade que costuma dirigir (km/h)? "))
+#include <stdio.h>
 
-if vel > 75:
-    print("Muito acima do limite! Multa grave.")
-else:
-    if vel > 65:
-        print("Acima de 65 km/h. Atenção!")
-    else:
-        if vel > 45:
-            print("Velocidade segura para o trânsito.")
-        else:
-            print("Muito devagar, cuidado para não atrapalhar o fluxo.")
+int main(void) {
+    double v;
+    printf("Velocidade que costuma dirigir (km/h): ");
+    scanf("%lf", &v);
+
+    if (v > 75) {
+        printf("Resposta do guarda: Muito rapido (> 75 km/h)!\n");
+    } else {
+        if (v > 65) {
+            printf("Resposta do guarda: Rapido (> 65 km/h).\n");
+        } else {
+            if (v > 55) {
+                printf("Resposta do guarda: Um pouco acima (> 55 km/h).\n");
+            } else {
+                if (v > 45) {
+                    printf("Resposta do guarda: Dentro do esperado (> 45 km/h).\n");
+                } else {
+                    printf("Resposta do guarda: Lento (< 45 km/h).\n");
+                }
+            }
+        }
+    }
+    return 0;
+}
