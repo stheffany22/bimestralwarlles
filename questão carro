@@ -1,0 +1,12 @@
+vel = float(input("Qual a velocidade que costuma dirigir (km/h)? "))
+
+if vel > 75:
+    print("Muito acima do limite! Multa grave.")
+else:
+    if vel > 65:
+        print("Acima de 65 km/h. Atenção!")
+    else:
+        if vel > 45:
+            print("Velocidade segura para o trânsito.")
+        else:
+            print("Muito devagar, cuidado para não atrapalhar o fluxo.")
