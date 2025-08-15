@@ -1,15 +1,27 @@
 #include <stdio.h>
 
-int main(void) {
-    int N, i, j, k = 1;
-    scanf("%d", &N);
-
-    for (i = 1; i <= N; i++) {
-        for (j = 1; j <= i; j++) {
-            printf("%d", k++);
-            if (j < i) printf(" ");
+void triangulo_floyd(int n) {
+    int numero = 1;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", numero);
+            numero++;
         }
-        printf("\n");
+        printf("\n");  // Pula para a próxima linha
     }
+}
+
+int main() {
+    int n;
+    
+    printf("Digite um número inteiro positivo: ");
+    scanf("%d", &n);
+    
+    if (n > 0) {
+        triangulo_floyd(n);
+    } else {
+        printf("Por favor, digite um número positivo.\n");
+    }
+
     return 0;
 }
