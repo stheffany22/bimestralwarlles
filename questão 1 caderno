@@ -1,0 +1,31 @@
+print("Escolha a operação:")
+print("1 - Adição")
+print("2 - Subtração")
+print("3 - Multiplicação")
+print("4 - Divisão")
+print("5 - Resto da divisão")
+
+op = int(input("Digite a opção: "))
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+
+if op == 1:
+    resultado = num1 + num2
+elif op == 2:
+    resultado = num1 - num2
+elif op == 3:
+    resultado = num1 * num2
+elif op == 4:
+    if num2 != 0:
+        resultado = num1 / num2
+    else:
+        resultado = "Erro: divisão por zero"
+elif op == 5:
+    if num2 != 0:
+        resultado = num1 % num2
+    else:
+        resultado = "Erro: divisão por zero"
+else:
+    resultado = "Opção inválida."
+
+print("Resultado:", resultado)
