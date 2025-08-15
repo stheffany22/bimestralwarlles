@@ -1,15 +1,19 @@
-# Ler quantidade de números
-qtd = int(input("Quantos números deseja informar? "))
+#include <stdio.h>
 
-maior = None
-contador_maior = 0
+int main() {
+    int quantidade, i;
+    float numero, maior;
+    int contador_maior = 0;
 
-for i in range(qtd):
-    num = int(input(f"Digite o {i+1}º número: "))
-    if maior is None or num > maior:
-        maior = num
-        contador_maior = 1
-    elif num == maior:
-        contador_maior += 1
+    // Solicita ao usuário a quantidade de números
+    printf("Quantos números você deseja digitar? ");
+    scanf("%d", &quantidade);
 
-print(f"O maior número é {maior} e foi lido {contador_maior} vezes.")
+    if (quantidade <= 0) {
+        printf("Quantidade inválida.\n");
+        return 1;
+    }
+
+    for (i = 0; i < quantidade; i++) {
+        printf("Digite o %dº número: ", i + 1);
+        scanf("%f", &numero);
