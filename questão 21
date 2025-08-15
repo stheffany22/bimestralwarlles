@@ -1,0 +1,15 @@
+# Ler quantidade de números
+qtd = int(input("Quantos números deseja informar? "))
+
+maior = None
+contador_maior = 0
+
+for i in range(qtd):
+    num = int(input(f"Digite o {i+1}º número: "))
+    if maior is None or num > maior:
+        maior = num
+        contador_maior = 1
+    elif num == maior:
+        contador_maior += 1
+
+print(f"O maior número é {maior} e foi lido {contador_maior} vezes.")
